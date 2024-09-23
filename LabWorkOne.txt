@@ -1,0 +1,39 @@
+Task4.
+e:
+cd \Os_Labs
+cd Lab_one
+COPY CON students.txt
+Абашев А.В.
+Варгин А.Д.
+Трухина П.А.
+Анухин Е.А.
+Майорова Н.Д.
+Богданов Д.С.
+→
+type students.txt
+sort students.txt /o sorted.txt
+type sorted.txt
+doskey /history
+
+Task5.
+COPY CON commands.txt
+DIR: Используется для отображения файлов в указанной директории.
+COPY: Используется для копирования одного или нескольких файлов из одного места в другое.
+XCOPY: Копирует исходные файлы, измененные только по указанной дате или после нее.
+→
+type commands.txt
+doskey /history
+
+Task6.
+dir C:\Windows /A-D /O:S > dir_output.txt
+type dir_output.txt
+doskey /history
+
+Task7.
+dir C:\Windows\*.jpeg
+xcopy c:\Windows\*.jpeg f:\WinGrafika\
+doskey /history
+
+Task8.
+copy C:\Windows\*.exe F:\WinEx\
+doskey /history
