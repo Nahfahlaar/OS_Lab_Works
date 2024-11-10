@@ -1,0 +1,15 @@
+PS C:\Users\BebozWizard> function Get-LargestAndSmallestFiles {
+>> param(
+>> [string]$path
+>> )
+>>
+>> $files = Get-ChildItem -Path $path -File -Recurse
+>> $largestFile = $files | Sort-Object Length -Descending | Select-Object -First 1
+>> $smallestFiles = $files | Sort-Object Length | Select-Object -First 3
+>> Write-Output "Файл наибольшего размера: $($largestFile.Name) ($($largestFile.Length) байт)"
+>> Write-Output "Три файла наименьшего размера:"
+>>     $smallestFiles | ForEach-Object { Write-Output "$($_.Name) ($($_.Length) байт)" }
+>> }
+
+
+# Вызов командлета Get-LargestAndSmallestFiles -path "Путь к папке"

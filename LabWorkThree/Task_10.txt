@@ -1,0 +1,23 @@
+$dirTimes = 1..10 | ForEach-Object { (Measure-Command { Get-ChildItem }).TotalMilliseconds }
+
+$psTimes = 1..10 | ForEach-Object { (Measure-Command { Get-Process }).TotalMilliseconds }
+
+
+$maxDir = ($dirTimes | Measure-Object -Maximum).Maximum
+
+$minDir = ($dirTimes | Measure-Object -Minimum).Minimum
+
+$avgDir = ($dirTimes | Measure-Object -Average).Average
+
+
+
+
+$maxPs = ($psTimes | Measure-Object -Maximum).Maximum
+
+$minPs = ($psTimes | Measure-Object -Minimum).Minimum
+
+$avgPs = ($psTimes | Measure-Object -Average).Average
+
+
+Write-Output "max_dir: $maxDir ms, min_dir: $minDir ms, avg_dir: $avgDir ms"
+Write-Output "max_ps: $maxPs ms, min_ps: $minPs ms, avg_ps: $avgPs ms"

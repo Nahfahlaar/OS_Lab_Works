@@ -1,0 +1,5 @@
+Get-Process | 
+>>    Sort-Object ProcessName | 
+>>    Select-Object -Property ProcessName| 
+>>    ConvertTo-Html -Property ProcessName| 
+>>    Out-File "C:\Users\BebozWizard\Desktop\HomeWorks\Oslabs\OS_Lab_Works\LabWorkThree\Task_7.html"
